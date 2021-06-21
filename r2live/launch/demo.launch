@@ -14,7 +14,7 @@
     <param name="record_bag_name" type="string" value="/home/ziv/kitti_bag/lic_record_bag/lic.bag" />
     <param name="if_dump_log" type="int" value="0" />
     <param name="acc_mul_G" type="int" value="0" />
-    <param name="lidar_drag_cam_tim" type="int" value="8" />
+    <param name="lidar_drag_cam_tim" type="int" value="10" />
     <param name="if_lidar_start_first" type="int" value="1" />
 
     <node pkg="r2live" type="lio_feat_extract" name="lio_feat_extract"  output="log"/>

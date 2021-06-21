@@ -5,10 +5,8 @@
 #include <Eigen/Eigen>
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
-// #include <fast_lio/States.h>
-// #include <fast_lio/Pose6D.h>
-#include <vins_estimator/States.h>
-#include <vins_estimator/Pose6D.h>
+#include <r2live/States.h>
+#include <r2live/Pose6D.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/PointCloud2.h>
@@ -48,7 +46,7 @@
 #define DEBUG_FILE_DIR(name) (std::string(std::string(ROOT_DIR) + "Log/" + name))
 // using vins_estimator = fast_lio;
 
-typedef vins_estimator::Pose6D Pose6D;
+typedef r2live::Pose6D Pose6D;
 typedef pcl::PointXYZINormal PointType;
 typedef pcl::PointCloud<PointType> PointCloudXYZI;
 

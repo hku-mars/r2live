@@ -23,6 +23,7 @@ find_package(catkin REQUIRED COMPONENTS
     nav_msgs
     tf
     cv_bridge
+    message_generation
     livox_ros_driver
     )
 
