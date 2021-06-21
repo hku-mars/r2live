@@ -1,0 +1,39 @@
+feature_extraction:
+   lidar_type: 1
+   blind: 0.1
+   inf_bound: 4
+   N_SCANS: 6
+   group_size: 8
+   disA: 0.01
+   disB: 0.1
+   p2l_ratio: 225
+   limit_maxmid: 6.25
+   limit_midmin: 6.25
+   limit_maxmin: 3.24
+   jump_up_limit: 170.0
+   jump_down_limit: 8.0
+   cos160: 160.0
+   edgea: 2
+   edgeb: 0.1
+   smallp_intersect: 172.5
+   smallp_ratio: 1.2
+   point_filter_num: 1
+   using_raw_point: 1
+   point_step: 3
+
+fast_lio: 
+   map_file_path: " "
+   max_iteration: 4
+   dense_map_enable: true
+   fov_degree: 360.0
+   cube_side_length: 1000000000
+   maximum_pt_kdtree_dis: 0.5
+   maximum_res_dis: 0.3
+   planar_check_dis: 0.10
+   m_long_rang_pt_dis: 500
+   publish_feature_map: false
+   filter_size_corner: 0.4
+   filter_size_surf: 0.4
+   filter_size_surf_z: 0.4
+   filter_size_map: 0.4
+   local_loop_win: [110, -116, 155, -170]

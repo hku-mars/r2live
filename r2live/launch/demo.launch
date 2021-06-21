@@ -1,0 +1,34 @@
+<launch>
+
+    <arg name="config_path" default = "$(find r2live)/../config/filr_cam.yaml" />
+	  <arg name="vins_path" default = "$(find r2live)/../config/../" />
+    <rosparam command="load" file="$(find r2live)/../config/lio_config.yaml" />
+    <node name="feature_tracker" pkg="feature_tracker" type="feature_tracker" output="log">
+        <param name="config_file" type="string" value="$(arg config_path)" />
+        <param name="vins_folder" type="string" value="$(arg vins_path)" />
+        <param name="image_topic" type="string" value="/camera/image_color"/>
+    </node>
+    
+    <param name="imu_topic" type="string" value="/livox/imu"/>
+    <param name="if_write_to_bag" type="int" value="0" />
+    <param name="record_bag_name" type="string" value="/home/ziv/kitti_bag/lic_record_bag/lic.bag" />
+    <param name="if_dump_log" type="int" value="0" />
+    <param name="acc_mul_G" type="int" value="0" />
+    <param name="lidar_drag_cam_tim" type="int" value="8" />
+    <param name="if_lidar_start_first" type="int" value="1" />
+
+    <node pkg="r2live" type="lio_feat_extract" name="lio_feat_extract"  output="log"/>
+
+    <group if="1">
+        <node name="r2live" pkg="r2live" type="r2live" output="screen">
+                <param name="config_file" type="string" value="$(arg config_path)" />
+                <param name="vins_folder" type="string" value="$(arg vins_path)" />
+        </node> 
+    </group>
+        
+    <arg name="rviz" default="1" />
+    <group if="$(arg rviz)">
+        <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find r2live)/../config/rviz/vins_rviz_config.rviz" />
+    </group>
+    
+</launch>

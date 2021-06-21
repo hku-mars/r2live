@@ -1,11 +1,6 @@
 # R2LIVE
 ## A Robust, Real-time, LiDAR-Inertial-Visual tightly-coupled state Estimator and mapping
 
-## Update (April 3 2021)
-
-**Date of releasing our source code**:
-Currently, our paper is under review, and our code is under-reconstruction. We will release our source code after the first round of review if the reviewer's comments are positive.
-
 **Our preprint paper**: we have corrected some typos and errors of our previous version of paper, the amended paper can be access at [here](paper/R2LIVE_amended_v1.pdf). When amending our paper, I would like to thanks [narutojxl (焦小亮)](https://github.com/narutojxl), who has found my errors and provided his corrections.
  
 **Our related video**: our related video is now available on YouTube (click below images to open):
@@ -20,7 +15,51 @@ Currently, our paper is under review, and our code is under-reconstruction. We w
     <font color=#a0a0a0 size=2>The reconstructed 3D maps of HKU main building are shown in (d), and the detail point cloud with the correspondence panorama images are shown in (a) and (b). (c) shows that our algorithm can close the loop by itself (returning the starting point) without any additional processing (e.g. loop closure). In (e), we merge our map with the satellite image to further examine the accuracy of our system.</font>
 </div>
 
-<div align="center">
-    <img src="pics/station.png" width = 100% >
-    <font color=#a0a0a0 size=2>We evaluate our algorithm in a Hong Kong MTR station consisting of cluttered lobby and very long narrow tunnels, as shown in (a). The tunnel is up to 190 meters long and is filled with moving pedestrians, making it extremely challenging for both LiDAR-based and camera-based SLAM methods. (b): the map built by our system is well aligned with the street map of the MTR station.</font>
-</div>
+## 1. Prerequisites
+### 1.1 **Ubuntu** and **ROS**
+Ubuntu 64-bit 16.04 or 18.04.
+ROS Kinetic or Melodic. [ROS Installation](http://wiki.ros.org/ROS/Installation) and its additional ROS pacakge:
+
+```
+    sudo apt-get install ros-XXX-cv-bridge ros-XXX-tf ros-XXX-message-filters ros-XXX-image-transport
+```
+**NOTICE:** remember to replace "XXX" on above command as your ROS distributions, for example, if your use ROS-kinetic, the command should be:
+
+```
+    sudo apt-get install ros-kinetic-cv-bridge ros-kinetic-tf ros-kinetic-message-filters ros-kinetic-image-transport
+```
+
+### 1.2. **Ceres Solver**
+Follow [Ceres Installation](http://ceres-solver.org/installation.html).
+
+### 1.3. **livox_ros_driver**
+Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
+
+## 2. Build
+Clone the repository and catkin_make:
+
+```
+    cd ~/catkin_ws/src
+    git clone https://github.com/hku-mars/r2live.git
+    cd ../
+    catkin_make
+    source ~/catkin_ws/devel/setup.bash
+```
+
+## 3. Run our examples
+Download [Our recorded rosbag](https://drive.google.com/drive/folders/1LpoX6_05Zic-mRLOD38EO0w2ABXI1rrW?usp=sharing) and then
+```
+roslaunch r2live demo.launch
+rosbag play YOUR_DOWNLOADED.bag
+```
+
+## 4.Acknowledgments
+Our repository contains two main subsystems, with our LiDAR-inertial and visual-inertial system is developed based on [FAST-LIO](https://github.com/hku-mars/FAST_LIO) and [VINS-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono), respectively. Besides, our implementations also use the codes of [ikd-Tree](https://github.com/hku-mars/ikd-Tree), [BALM](https://github.com/hku-mars/BALM) and [loam-livox](https://github.com/hku-mars/loam_livox).
+
+
+## 5. License
+The source code is released under [GPLv2](http://www.gnu.org/licenses/) license.
+
+We are still working on improving the performance and reliability of our codes. For any technical issues, please contact me via email Jiarong Lin < ziv.lin.ljr@gmail.com >.
+
+For commercial use, please contact Dr. Fu Zhang < fuzhang@hku.hk >
