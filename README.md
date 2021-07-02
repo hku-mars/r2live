@@ -46,6 +46,23 @@ Clone the repository and catkin_make:
     source ~/catkin_ws/devel/setup.bash
 ```
 
+## Docker Setup
+
+Build
+
+```
+    docker/build
+```
+
+Run
+
+```
+    xhost +
+    docker/run
+```
+
+Note: You need a Nvidia GPU to run the docker image
+
 ## 3. Run our examples
 Download [Our recorded rosbag](https://drive.google.com/drive/folders/1LpoX6_05Zic-mRLOD38EO0w2ABXI1rrW?usp=sharing) and then
 ```
