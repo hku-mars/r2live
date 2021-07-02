@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker build -t r2live:latest -f docker/Dockerfile .
