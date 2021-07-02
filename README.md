@@ -35,7 +35,7 @@ Follow [Ceres Installation](http://ceres-solver.org/installation.html).
 ### 1.3. **livox_ros_driver**
 Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
 
-## 2. Build
+## 2. Build r2live on ROS:
 Clone the repository and catkin_make:
 
 ```
@@ -46,14 +46,14 @@ Clone the repository and catkin_make:
     source ~/catkin_ws/devel/setup.bash
 ```
 
-## Docker Setup
+## 3. Docker Support (optional)
+To further facilitate the building process, we add docker in our code. Docker environment is like a sandbox, thus makes our code environment-independent. 
 
-Build
+Docker build
 
 ```
     docker/build
 ```
-
 Run
 
 ```
@@ -63,18 +63,18 @@ Run
 
 Note: You need a Nvidia GPU to run the docker image
 
-## 3. Run our examples
+## 4. Run our examples
 Download [Our recorded rosbag](https://drive.google.com/drive/folders/1LpoX6_05Zic-mRLOD38EO0w2ABXI1rrW?usp=sharing) and then
 ```
 roslaunch r2live demo.launch
 rosbag play YOUR_DOWNLOADED.bag
 ```
 
-## 4.Acknowledgments
+## 5.Acknowledgments
 Our repository contains two main subsystems, with our LiDAR-inertial and visual-inertial system is developed based on [FAST-LIO](https://github.com/hku-mars/FAST_LIO) and [VINS-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono), respectively. Besides, our implementations also use the codes of [ikd-Tree](https://github.com/hku-mars/ikd-Tree), [BALM](https://github.com/hku-mars/BALM) and [loam-livox](https://github.com/hku-mars/loam_livox).
 
 
-## 5. License
+## 6. License
 The source code is released under [GPLv2](http://www.gnu.org/licenses/) license.
 
 We are still working on improving the performance and reliability of our codes. For any technical issues, please contact me via email Jiarong Lin < ziv.lin.ljr@gmail.com >.
