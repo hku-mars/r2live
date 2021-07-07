@@ -10,6 +10,12 @@ REPO_ROOT="$( cd -P "$( dirname "$DOCKER_DIR" )" && pwd )"
 DOCKER_VERSION=$(docker version -f "{{.Server.Version}}")
 DOCKER_MAJOR=$(echo "$DOCKER_VERSION"| cut -d'.' -f 1)
 
+if [ "${DOCKER_MAJOR}" -ge 19 ]; then
+    runtime="--gpus=all"
+else
+    runtime="--runtime=nvidia"
+fi
+
 # no need to do `xhost +` anymore
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth

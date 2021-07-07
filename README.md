@@ -54,14 +54,19 @@ Docker build
 ```
     docker/build
 ```
-Run
+Run 
 
 ```
     xhost +
     docker/run
 ```
 
-Note: You need a Nvidia GPU to run the docker image
+Run with gpu support
+
+```
+    xhost +
+    docker/run_gpu
+``` 
 
 ## 4. Run our examples
 Download [Our recorded rosbag](https://drive.google.com/drive/folders/1LpoX6_05Zic-mRLOD38EO0w2ABXI1rrW?usp=sharing) and then
