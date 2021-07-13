@@ -180,7 +180,7 @@ void img_callback(const sensor_msgs::ImageConstPtr &img_msg)
             for (int i = 0; i < NUM_OF_CAM; i++)
             {
                 cv::Mat tmp_img = stereo_img.rowRange(i * ROW, (i + 1) * ROW);
-                cv::cvtColor(show_img, tmp_img, CV_GRAY2RGB);
+                cv::cvtColor(show_img, tmp_img, cv::COLOR_GRAY2RGB);
 
                 for (unsigned int j = 0; j < trackerData[i].cur_pts.size(); j++)
                 {

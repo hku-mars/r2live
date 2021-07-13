@@ -35,7 +35,7 @@
 #pragma once
 #include <omp.h>
 #include <mutex>
-#include <math.h>
+#include <cmath>
 #include <thread>
 #include <fstream>
 #include <csignal>
@@ -44,7 +44,7 @@
 #include <so3_math.h>
 #include <ros/ros.h>
 #include <Eigen/Core>
-#include <opencv/cv.h>
+#include <opencv2/opencv.hpp>
 #include <common_lib.h>
 #include <kd_tree/ikd_Tree.h>
 #include "IMU_Processing.hpp"
@@ -59,6 +59,7 @@
 #include <pcl/kdtree/kdtree_flann.h>
 #include <pcl/io/pcd_io.h>
 #include <sensor_msgs/PointCloud2.h>
+#include <sensor_msgs/Imu.h>
 #include <tf/transform_datatypes.h>
 #include <tf/transform_broadcaster.h>
 // #include <fast_lio/States.h>

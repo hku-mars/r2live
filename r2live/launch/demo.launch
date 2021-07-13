@@ -28,7 +28,7 @@
         
     <arg name="rviz" default="1" />
     <group if="$(arg rviz)">
-        <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find r2live)/../config/rviz/vins_rviz_config.rviz" />
+        <node name="visualisation" pkg="rviz" type="rviz" output="log" args="-d $(find r2live)/../config/rviz/vins_rviz_config.rviz" />
     </group>
     
 </launch>
