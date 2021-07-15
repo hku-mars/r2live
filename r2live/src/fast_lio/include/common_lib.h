@@ -168,7 +168,7 @@ struct Camera_Lidar_queue
     };
     ~Camera_Lidar_queue(){};
 
-    double imu_in(const double &in_time)
+    void imu_in(double in_time)
     {
         if (m_first_imu_time < 0)
         {
