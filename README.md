@@ -1,7 +1,7 @@
 # R2LIVE
 ## A Robust, Real-time, LiDAR-Inertial-Visual tightly-coupled state Estimator and mapping
 
-**Our preprint paper**: we have corrected some typos and errors of our previous version of paper, the amended paper can be access at [here](paper/R2LIVE_amended_v1.pdf). When amending our paper, I would like to thanks [narutojxl (焦小亮)](https://github.com/narutojxl), who has found my errors and provided his corrections.
+**Our preprint paper**: we have corrected some typos and errors of our previous version of paper, the amended paper can be access at [here](paper/r2live_ral_final.pdf). When amending our paper, I would like to thanks [narutojxl (焦小亮)](https://github.com/narutojxl), who has found my errors and provided his corrections.
  
 **Our related video**: our related video is now available on YouTube (click below images to open):
 <div align="center">
