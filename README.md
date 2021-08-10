@@ -74,12 +74,25 @@ Download [Our recorded rosbag](https://drive.google.com/drive/folders/1LpoX6_05Z
 roslaunch r2live demo.launch
 rosbag play YOUR_DOWNLOADED.bag
 ```
+If everything is correct, you will get the result that matches our paper:)
+The result of [indoor_aggressive.bag](https://drive.google.com/file/d/1UwEna7S6Unm0RuGcSZhUkEstNsbJaMjX/view?usp=sharing) (the Experiment-1 in our [paper](paper/r2live_ral_final.pdf)):
+<div align="center">
+    <img src="pics/indoor_aggressive_bag_res.png" width = 60% >
+</div>
 
-## 5.Acknowledgments
+and [hku_main_building.bag](https://drive.google.com/file/d/1cwCuUYkUwL4ch_oloAoUMfL-G1MHTdMk/view?usp=sharing) (our Experiment-3).
+<div align="center">
+    <img src="pics/cover.png" width = 60% >
+</div>
+
+## 5. Sampling and run your own data
+Since the LiDAR data and IMU data published by the official Livox-ros-driver is with the timestamp of LiDAR (started from 0 in each recording), and the timestamp of the image is usually recorded with the timestamp of the operation system. To make them working under the same time-based, we modified the source code of Livox-ros-driver, which is available at [here](https://github.com/ziv-lin/livox_ros_driver_for_R2LIVE). We suggest you replace the official driver with it when sampling your own data for R2LIVE.
+
+## 6. Acknowledgments
 Our repository contains two main subsystems, with our LiDAR-inertial and visual-inertial system is developed based on [FAST-LIO](https://github.com/hku-mars/FAST_LIO) and [VINS-Mono](https://github.com/HKUST-Aerial-Robotics/VINS-Mono), respectively. Besides, our implementations also use the codes of [ikd-Tree](https://github.com/hku-mars/ikd-Tree), [BALM](https://github.com/hku-mars/BALM) and [loam-livox](https://github.com/hku-mars/loam_livox).
 
 
-## 6. License
+## 7. License
 The source code is released under [GPLv2](http://www.gnu.org/licenses/) license.
 
 We are still working on improving the performance and reliability of our codes. For any technical issues, please contact me via email Jiarong Lin < ziv.lin.ljr@gmail.com >.
