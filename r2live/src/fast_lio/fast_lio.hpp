@@ -44,7 +44,7 @@
 #include <so3_math.h>
 #include <ros/ros.h>
 #include <Eigen/Core>
-#include <opencv/cv.h>
+#include <opencv2/core.hpp>
 #include <common_lib.h>
 #include <kd_tree/ikd_Tree.h>
 #include "IMU_Processing.hpp"
